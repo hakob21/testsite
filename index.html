@@ -11,10 +11,10 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-NYZ7XWNY3M');
     </script>
-            <style>
+
+    <style>
         #chat-widget-container {
             font-family: 'Helvetica', 'Arial', Courier, monospace;
             position: fixed;
@@ -47,32 +47,38 @@
             font-family: 'Helvetica', 'Arial', Courier, monospace;
             font-weight: 100;
         }
-        </style>
-        <script src="https://a.messageflow.ai/live_chat/chat_v3.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-        // Your script logic here
-            console.log("DOM is fully loaded and parsed.");
-                const liveChatWidget = new LiveChatWidget({
-          host:  "https://a.messageflow.ai", // the host of the livechat
-          uid: "271f0d8f6f571470d7c50177a052866730960e6c", // identifies the livechat instance
-          css_url: "https:///live_chat/chat.css", //provide your own css if you want
-          show_question: false, // false shows only the chat window, otherwise also a Question and answer is shown
-          button_title: "Bot", //the text inside the button that will be create, not needed if button_element is provided, then no button is created
-          button_element: document.getElementById('mybutton'), // use this html element as button to open the chat window. An onclick listener is added to this element
-          external_id: "live_chat_1", //identifies this livechat widget, you must set it, helps you to distinguish multiple chat windows on one page, this is set as external_id on the conversation
-          //position_chat_window: {left: "100px",bottom: "200px"}, //position the chat window left and bottom, top and right not yet implemented.
-          chat_title: "Assistant", // sets the title of the chat window
-        });
-          });
-        
-        </script>
 
-      
+        /* Style for the iframe */
+        #embedded-frame {
+            width: 100%; /* Adjust width as needed */
+            height: 600px; /* Adjust height as needed */
+            border: none; /* Remove default border */
+        }
+    </style>
+
+    <script src="https://a.messageflow.ai/live_chat/chat_v3.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("DOM is fully loaded and parsed.");
+            const liveChatWidget = new LiveChatWidget({
+                host: "https://a.messageflow.ai", // the host of the livechat
+                uid: "271f0d8f6f571470d7c50177a052866730960e6c", // identifies the livechat instance
+                css_url: "https:///live_chat/chat.css", //provide your own css if you want
+                show_question: false, // false shows only the chat window, otherwise also a Question and answer is shown
+                button_title: "Bot", //the text inside the button that will be create, not needed if button_element is provided, then no button is created
+                button_element: document.getElementById('mybutton'), // use this html element as button to open the chat window. An onclick listener is added to this element
+                external_id: "live_chat_1", //identifies this livechat widget, you must set it, helps you to distinguish multiple chat windows on one page, this is set as external_id on the conversation
+                chat_title: "Assistant", // sets the title of the chat window
+            });
+        });
+    </script>
 
 </head>
 <body>
     <h1>Test Google Analytics</h1>
     <p>This is a simple static page to test Google Analytics.</p>
+
+    <!-- Add the iframe here -->
+    <iframe id="embedded-frame" src="https://test-iframe-hke-466d8b4adb6e.herokuapp.com/index.html"></iframe>
 </body>
 </html>
