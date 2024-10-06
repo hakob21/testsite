@@ -9,12 +9,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NYZ7XWNY3M"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){
-          'cookie_flags': 'samesite=none;secure' // https://stackoverflow.com/questions/74494818/google-analytics-not-working-for-web-site-embeded-in-iframe
-          dataLayer.push(arguments);
-      }
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-NYZ7XWNY3M');
+      gtag('config', 'G-NYZ7XWNY3M', {
+        'cookie_flags': 'samesite=none;secure'
+      });
     </script>
 
     <style>
